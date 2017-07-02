@@ -1,0 +1,48 @@
+---
+title: "External Factors"
+author: "Deekshana Krishna"
+date: "July 1, 2017"
+output: html_document
+---
+
+The first step in the Analytics project is to import the dataset and then start exploring them
+In this project we are dealing with three main datasets namely,
+
+1. Weather Data
+2. Dow Jones Data
+3. Customer Data
+
+All the three datasets are imported and attached in the code
+
+```{r}
+weather =Weather_ret_data_summary
+dow = Dow_jones_Ret_data_summary
+customer = customer_data_zip
+
+summary(weather)
+```
+```{r}
+summary(dow)
+```
+```{r}
+summary(customer)
+```
+**Checking the Structure of the Dataset**
+
+The next step is to start and work with the first dataset, i.e, weather. The main aim of the analysis is to understand the affects of weather over the purchase patterns of customers. 
+
+The target variable in this regard is the Purchase amaount and all the rest would be the X variables in this case.
+
+```{r}
+str(weather)
+catlist = c(1,2,10,15,16,19,33)
+
+str(weather [,catlist])
+?as.factor
+weather$Card = factor(weather$Card,levels=c(0,1),labels=c("0","1"))
+str(weather$Card)
+
+```
+
+
+
